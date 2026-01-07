@@ -22,7 +22,7 @@ risk_on = (last_close > last_ema) and (last_vxn < 35)
 # 4. Generate HTML
 if risk_on:
     # SUN THEME (Risk On = Buy LQQ)
-    bg_color = "#1a1a2e" # Dark blue background
+    bg_color = "#000000" # Dark blue background
     img_src = "sun.jpg"
     msg = "RISK ON"
     description = f"Nasdaq ({last_close:.2f}) > EMA220 ({last_ema:.2f}) and VXN is calm ({last_vxn:.2f})."
