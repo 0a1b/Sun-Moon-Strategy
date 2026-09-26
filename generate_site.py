@@ -1,17 +1,10 @@
 import yfinance as yf
 from datetime import datetime
 
-session = requests.Session()
-session.headers.update(
-    {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-    }
-)
-
 # 1. Fetch Data
 # QQQ for trend, ^VXN for Nasdaq-specific volatility
 tickers = ["QQQ", "^VXN"]
-data = yf.download(tickers, period="5y", session=session)['Close']
+data = yf.download(tickers, period="5y", multi_level_index=False)['Close']
 
 # 2. Calculate Indicators
 # EMA 220 on QQQ
